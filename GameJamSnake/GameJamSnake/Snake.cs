@@ -8,11 +8,11 @@ namespace GameJamSnake
 {
     public class Snake
     {
-        ConsoleKeyInfo keyInfo = Console.ReadKey();
-        char key = 'w';
-        char dir = 'u';
+        ConsoleKeyInfo keyInfo;
+        char key = Console.ReadKey().KeyChar;
+        char dir = Console.ReadKey().KeyChar;
 
-        //Store snake position
+        // Store snake position
         List<Position> snakeBody;
 
         public int x { get; set; }
@@ -24,13 +24,13 @@ namespace GameJamSnake
 
             snakeBody = new List<Position>();
             snakeBody.Add(new Position(x, y));
-        }
+            }
 
         public void DrawSnake()
         {
             foreach (Position pos in snakeBody)
             {
-                Console.SetCursorPosition(pos._x, pos._y);
+                Console.SetCursorPosition(pos.x, pos.y);
                 Console.WriteLine("▐");
             }
         }
