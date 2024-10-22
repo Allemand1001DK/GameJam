@@ -16,7 +16,8 @@ class Program
                 .Color(Color.Orange1));
 
             AnsiConsole.Markup("[bold red]Fang eller bliv fanget af Orhan, få 20 points for at vinde .[/]\n");
-            AnsiConsole.Markup("[bold aqua]Klik for at begynde...[/]");
+            AnsiConsole.Markup("[bold aqua]Klik for at begynde...[/]\n");
+            Console.WriteLine("::::::::::::::::::::::::::=*-:=-:::::::::::::::::-----------\r\n::::::::::::::::::::::+*%%@@@@@@@%%=:::::::::::::::-:-------\r\n::::::::::::::::::::=###%@%@@@@@@@@@%*-:::::::::::::::------\r\n:::::::::::::::::::+###%%%%%@@@@@@@@@@@#-::::::::::::::-:---\r\n::::::::::::::::-*%#%%%%#%@@%%@@@@@@@@@@@+--::::::::::::::--\r\n:::::::::::::::-%*#%%@@@@%%%%@%%@%%@@@@@@@@#-:::::::::::::--\r\n::::::::::::::-%##%@#+=====+***######%@@@@@@-:::::::::::::::\r\n::::::::::::::+###%=---=====+++****####%%@@@-:::::::::::::::\r\n::::::::::::::*##%=:::-==++==++*****#####%@@=::::::::::::---\r\n::::::::::::::*##=::.::-=++++=+****#######%@=::::-----------\r\n::::::::::::::=#*::::::--=++++++*****######@#::-------------\r\n:::::::::::::::++:::::::-==+++=+****#*#####%#---------------\r\n:::::::::::::::*+::::::-=++++++*###%%%%%###%%-----------====\r\n:::::::::::::::**::=+#%%###*+**##%%%####%##%%+#+-------=====\r\n::::::::::::::-*#:-==++*##*===*##%@%%%%%###%%##*------======\r\n::::::::::::::=+#--=**#@%%%*--*##%%%%##%###%%##+------======\r\n:::::::::::::::+--:--=+*##*+--*####%%%######%%#=-------=====\r\n:::::::::::::::-*-::-=+++=-:-=*#######****##%#*---------====\r\n:::::::::::::::::-:::-++**=::=**###%%##****##*-----------===\r\n:::::::::::::::::-:::=+*##-:-=*######%%###*#=:::----------==\r\n:::::::::::::::::---=+#%#+--=+#%%#####%@####-::::----------=\r\n:::::::::::::::::-===*@#=--=+****###%%%%####::::::----------\r\n::::::::::::::::::==**##*%#-=+*####%%####%#=::::::----------\r\n:::::::::::::::::::==++*=--==**###%%##%#%%#::::::::---------\r\n::::::::::::::::::::=+++=---=*##%#####%%%#::::::::::--------\r\n::::::::::::::::::::*=++*+=---=+***##%@%+::::::::::---------\r\n:::::::::::::::::::+#-=+*#**+*####%%%@%#+-::::::::----------\r\n::::::::::::::::::.*%=-==**##%%%@@%@%###+++=-::::-----------\r\n:::::::::::::::....+%*--===+*#%%%%%%####+++++++==--------===\r\n:::::::::::::..::...*%*=-===+*########%+++++++++++++========\r\n:::::::::::::::.:....+%#=--==+*#######=+++++++++++++=+++====\r\n:.:::-::---::--::..:.:.+%#+=+=+*****+=+++++++++++++++=======\r\n.-=--..:::---:---:......:+###****+-:++++++*++++++===========");
             Console.ReadKey();
             Console.Clear();
 
@@ -32,17 +33,18 @@ class Program
                 ("Du hører Orhan tættere på. Hvad vil du gøre?", "Gem dig bag et træ", "Løb hurtigere", "Råb om hjælp"),
                 ("Det har regnet meget og der en vandpyt foran dig. Hvad vil du gøre?", "Svøm over", "Byg en tømmerflåde", "Løb langs vandpytten"),
                 ("Du ser Brainbox til højre. Hvad vil du gøre?", "Gå ind i hulen", "Løb forbi", "Sæt dig ned og hvile"),
-                ("Det er weekend og går forbi skolen og Orhan kommer ud. Hvad gøre du?", "Jeg stivner at skræk", "Jeg råber jeg har fri og han skal blive indenfor", "Jeg løber alt hvad jeg kan")
+                ("Det er weekend og går forbi skolen og Orhan kommer ud. Hvad gøre du?", "Jeg stivner at skræk", "Jeg råber jeg har fri og han skal blive indenfor", "Jeg løber alt hvad jeg kan"),
+                ("Orhan kaster yellow book efter dig. Hvad gøre du?", "Du dukker dig", "Du blokerer med Larmans UML bog", "Du tager en for teamet")
             };
 
             // Liste over scenarier, når spilleren jager Orhan
             List<(string scenario, string correctAction, string wrongAction1, string wrongAction2)> actionsWhileChasingOrhan = new List<(string, string, string, string)>
             {
-                ("Du ser Orhan gemme sig bag en busk. Hvad vil du gøre?", "Snige dig op og overraske ham", "Råbe for at skræmme ham ud", "Kaste en sten mod busken"),
-                ("Orhan springer i en flod for at slippe væk. Hvad vil du gøre?", "Følge efter ham i floden", "Løbe langs floden", "Søge efter en bro længere fremme"),
-                ("Du finder Orhan fanget i en kløft. Hvad vil du gøre?", "Efterlade ham i kløften", "Prøve at klatre ned til ham", "Råbe og sviner ham til"),
+                ("Du ser Orhan gemme sig bag en dør. Hvad vil du gøre?", "Snige dig op og overraske ham", "Råbe for at skræmme ham ud", "Kaste en sten mod døren"),
+                ("Orhan gemmer sig på lærerværelset. Hvad vil du gøre?", "Følge efter ham ind i lærerværelset ", "Løbe langs gangen", "Vente på ham"),
+                ("Du finder Orhan fanget i kantinen. Hvad vil du gøre?", "Efterlade ham i kantinen", "Drik en kop kaffe", "Råbe og sviner ham til"),
                 ("Orhan taber noget på jorden, mens han løber. Hvad vil du gøre?", "Samle det op", "Ignorere det og fortsætte jagten", "Stoppe op og undersøge det"),
-                ("Du ser Orhan forsøge at åbne en dør til et hus. Hvad vil du gøre?", "Løbe hen og fange ham ved døren", "Forsøge at slå ham ihjel", "Gå rundt om huset for at finde en anden indgang")
+                ("Du ser Orhan forsøge at åbne en døren til Brainbox. Hvad vil du gøre?", "Løbe hen og fange ham ved døren", "Forsøge at slå ham med Larmans UML bog", "Gå rundt om Brainbox for at finde en anden indgang")
             };
 
             AnsiConsole.MarkupLine("Orhan jagter dig! Vælg de rigtige handlinger for at overleve.");
