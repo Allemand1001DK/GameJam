@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameJamSnake", "GameJamSnake\GameJamSnake.csproj", "{038DEE94-825D-4EBD-850D-F061CDD43171}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatSnake", "ChatSnake\ChatSnake.csproj", "{26C10C91-EFB0-4983-9905-6BCC5E375928}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JagtOrhan", "JagtOrhan\JagtOrhan.csproj", "{DF443110-BEC6-4DF4-88D1-3C3CE43BFB47}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{038DEE94-825D-4EBD-850D-F061CDD43171}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{038DEE94-825D-4EBD-850D-F061CDD43171}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{038DEE94-825D-4EBD-850D-F061CDD43171}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{038DEE94-825D-4EBD-850D-F061CDD43171}.Release|Any CPU.Build.0 = Release|Any CPU
-		{26C10C91-EFB0-4983-9905-6BCC5E375928}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{26C10C91-EFB0-4983-9905-6BCC5E375928}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{26C10C91-EFB0-4983-9905-6BCC5E375928}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{26C10C91-EFB0-4983-9905-6BCC5E375928}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF443110-BEC6-4DF4-88D1-3C3CE43BFB47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF443110-BEC6-4DF4-88D1-3C3CE43BFB47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF443110-BEC6-4DF4-88D1-3C3CE43BFB47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF443110-BEC6-4DF4-88D1-3C3CE43BFB47}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

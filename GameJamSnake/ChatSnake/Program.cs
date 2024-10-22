@@ -253,7 +253,7 @@ namespace SnakeGame
                 Console.SetCursorPosition(startX + messageWidth - 1, startY + y);
                 Console.Write(" ");
             }
-
+            
             // Restore the borders of the game area
             DrawBorders();
         }
