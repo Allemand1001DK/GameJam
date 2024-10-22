@@ -10,6 +10,16 @@ class Program
 
         while (playAgain)
         {
+            Console.Clear();
+            AnsiConsole.Write(new FigletText("Escape the Orhan!")
+                .Centered()
+                .Color(Color.Orange1));
+
+            AnsiConsole.Markup("[bold red]Fang eller bliv fanget af Orhan, få 20 points for at vinde .[/]\n");
+            AnsiConsole.Markup("[bold aqua]Klik for at begynde...[/]");
+            Console.ReadKey();
+            Console.Clear();
+
             int points = 0;
             bool hasWeapon = false;
             Random random = new Random();
@@ -17,11 +27,12 @@ class Program
             // Liste over scenarier, mens spilleren bliver jagtet af Orhan
             List<(string scenario, string correctAction, string wrongAction1, string wrongAction2)> actionsWhileBeingChased = new List<(string, string, string, string)>
             {
-                ("Du ser en sti dele sig foran dig. Hvad vil du gøre?", "Drej til venstre", "Drej til højre", "Løb ligeud"),
-                ("Der er en stor sten foran dig. Hvad vil du gøre?", "Hop over stenen", "Gå udenom", "Stop op"),
+                ("Du ser en vej dele sig foran dig. Hvad vil du gøre?", "Drej til venstre", "Drej til højre", "Løb ligeud"),
+                ("Der er en stor kantsten foran dig. Hvad vil du gøre?", "Hop over stenen", "Gå udenom", "Stop op"),
                 ("Du hører Orhan tættere på. Hvad vil du gøre?", "Gem dig bag et træ", "Løb hurtigere", "Råb om hjælp"),
-                ("Der er en flod foran dig. Hvad vil du gøre?", "Svøm over", "Byg en tømmerflåde", "Løb langs floden"),
-                ("Du ser en hule til højre. Hvad vil du gøre?", "Gå ind i hulen", "Løb forbi", "Sæt dig ned og hvile")
+                ("Det har regnet meget og der en vandpyt foran dig. Hvad vil du gøre?", "Svøm over", "Byg en tømmerflåde", "Løb langs vandpytten"),
+                ("Du ser Brainbox til højre. Hvad vil du gøre?", "Gå ind i hulen", "Løb forbi", "Sæt dig ned og hvile"),
+                ("Det er weekend og går forbi skolen og Orhan kommer ud. Hvad gøre du?", "Jeg stivner at skræk", "Jeg råber jeg har fri og han skal blive indenfor", "Jeg løber alt hvad jeg kan")
             };
 
             // Liste over scenarier, når spilleren jager Orhan
@@ -34,7 +45,6 @@ class Program
                 ("Du ser Orhan forsøge at åbne en dør til et hus. Hvad vil du gøre?", "Løbe hen og fange ham ved døren", "Forsøge at slå ham ihjel", "Gå rundt om huset for at finde en anden indgang")
             };
 
-            AnsiConsole.MarkupLine("[bold yellow]Velkommen til flugtspillet![/]");
             AnsiConsole.MarkupLine("Orhan jagter dig! Vælg de rigtige handlinger for at overleve.");
 
             while (true)
@@ -53,7 +63,7 @@ class Program
                 // Brug SelectionPrompt fra Spectre.Console til at vise valgmulighederne
                 var choice = AnsiConsole.Prompt(
                     new SelectionPrompt<string>()
-                        .Title($"[bold blue]{scenario}[/]")
+                        .Title($"[greenyellow]{scenario}[/]")
                         .PageSize(3)
                         .MoreChoicesText("[grey](Brug op/ned piletasterne for at se flere valgmuligheder)[/]")
                         .AddChoices(choices));
@@ -98,7 +108,8 @@ class Program
 
                 if (points == 0)
                 {
-                    AnsiConsole.MarkupLine("\n[bold red]Du har 0 points! Du skal slå en terning mod Orhan for at overleve.[/]");
+                    AnsiConsole.MarkupLine("\n[bold red]Du har 0 points! Du skal slå en terning mod Orhan for at overleve. Klik for at slå med terningen[/]");
+                    Console.ReadKey();
                     int playerRoll = random.Next(1, 7);
                     int orhanRoll = random.Next(1, 7);
                     AnsiConsole.MarkupLine($"Du slog [bold yellow]{playerRoll}[/], og Orhan slog [bold yellow]{orhanRoll}[/].");
@@ -106,7 +117,9 @@ class Program
                     if (playerRoll > orhanRoll)
                     {
                         points += 2;
-                        AnsiConsole.MarkupLine("[green]Du vandt terningekastet og fik 2 points! Spillet fortsætter.[/]");
+                        AnsiConsole.MarkupLine("[green]Du vandt terningekastet og fik 2 points! Klik for at forsætte spillet.[/]");
+                        Console.ReadKey();
+                        Console.Clear();
                     }
                     else
                     {
@@ -116,7 +129,7 @@ class Program
                 }
 
                 // Vis spillerens nuværende points
-                AnsiConsole.MarkupLine($"\n[bold blue]Dine nuværende points: {points}[/]");
+                AnsiConsole.MarkupLine($"[greenyellow]Dine nuværende points: {points}[/]");
             }
 
             // Spørg spilleren om de vil spille igen
